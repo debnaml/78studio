@@ -22,7 +22,10 @@ export default function Home() {
           stagger: 0.2,
           ease: 'power2.out',
           onComplete: () => {
+
             gsap.to('#filled-svg', { opacity: 1, duration: 1, delay: 0.5 });
+            gsap.to('#outline-svg', { filter: "drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.7))", duration: 1 });
+            ;
           }
         }
       );
@@ -47,6 +50,7 @@ export default function Home() {
           {/* Stroke outline version */}
           <svg
             ref={svgRef}
+            id="outline-svg"
             className="logo"
             viewBox="-10 -10 605 342"
             xmlns="http://www.w3.org/2000/svg"
@@ -127,9 +131,7 @@ export default function Home() {
           opacity: 0;
         }
 
-        #filled-svg {
-           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-        }
+        
       `}</style>
     </>
   );
