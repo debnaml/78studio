@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import Head from 'next/head';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(DrawSVGPlugin);
@@ -94,7 +95,7 @@ export default function Home() {
           </svg>
         </div>
       </div>
-
+      <SpeedInsights />
       <style global jsx>{`
         html,
         body,
